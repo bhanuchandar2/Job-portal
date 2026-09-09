@@ -19,6 +19,7 @@ export const register = catchAsyncErrors(async (req, res, next) => {
     password,
     role,
   });
+  console.log("user",user)
   sendToken(user, 201, res, "User Registered Sucessfully !");
 });
 
