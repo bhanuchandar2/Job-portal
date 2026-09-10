@@ -14,8 +14,7 @@ config({ path: "./config/config.env" });
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
-    method: ["GET", "POST", "DELETE", "PUT"],
+    origin: "https://job-portal-1-fpy9.onrender.com",
     credentials: true,
   })
 );
