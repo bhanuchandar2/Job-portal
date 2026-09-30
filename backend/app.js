@@ -12,12 +12,17 @@ import fileUpload from "express-fileupload";
 const app = express();
 config({ path: "./config/config.env" });
 
-app.use(
-  cors({
-    origin: "https://job-portal-1-fpy9.onrender.com",
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://job-portal-1-fpy9.onrender.com",
+//     credentials: true,
+//   })
+// );
+
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true
+}));
 
 app.use(cookieParser());
 app.use(express.json());

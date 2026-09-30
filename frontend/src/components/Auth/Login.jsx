@@ -14,7 +14,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const { isAuthorized, setIsAuthorized } = useContext(Context);
+  const { isAuthorized, setIsAuthorized ,setuser} = useContext(Context);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -31,10 +31,12 @@ const Login = () => {
         }
       );
       toast.success(data.message);
+      {console.log(data)}
       setEmail("");
       setPassword("");
       setRole("");
       setIsAuthorized(true);
+      
     } catch (error) {
       toast.error(error.response.data.message);
     } finally {

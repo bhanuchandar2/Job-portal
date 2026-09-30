@@ -25,6 +25,7 @@ export const register = catchAsyncErrors(async (req, res, next) => {
 
 export const login = catchAsyncErrors(async (req, res, next) => {
   const { email, password, role } = req.body;
+  console.log(role)
   if (!email || !password || !role) {
     return next(new ErrorHandler("Please provide email ,password and role !"));
   }
@@ -41,6 +42,8 @@ export const login = catchAsyncErrors(async (req, res, next) => {
       new ErrorHandler(`User with provided email and ${role} not found !`, 404)
     );
   }
+  console.log("Logged in user:", user);
+console.log("Role:", user?.role);
   sendToken(user, 201, res, "User Logged In Sucessfully !");
 });
 
