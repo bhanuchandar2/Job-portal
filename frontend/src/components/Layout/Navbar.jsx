@@ -23,9 +23,9 @@ const Navbar = () => {
     } catch (error) {
       toast.error(error.response?.data?.message || "Logged out.");
     } finally {
-      setUser({});
-      setIsAuthorized(false);
-      navigateTo("/login");
+     setUser(null);
+    setIsAuthorized(false);
+    navigateTo("/login", { replace: true });
     }
   };
 

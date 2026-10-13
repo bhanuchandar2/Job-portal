@@ -13,11 +13,15 @@ const app = express();
 config({ path: "./config/config.env" });
 
 app.use(
-  cors({
-    origin: "https://job-portal-1-fpy9.onrender.com",
-    credentials: true,
-  })
+cors({
+origin: [
+"https://job-portal-1-fpy9.onrender.com",
+"http://localhost:5173",
+],
+credentials: true,
+})
 );
+
 
 
 app.use(cookieParser());

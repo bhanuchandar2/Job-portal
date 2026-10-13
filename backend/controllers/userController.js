@@ -62,6 +62,8 @@ export const logout = catchAsyncErrors(async (req, res, next) => {
 });
 
 
+
+
 export const getUser = catchAsyncErrors((req, res, next) => {
   const user = req.user;
   // Sanitize user data to remove sensitive fields
